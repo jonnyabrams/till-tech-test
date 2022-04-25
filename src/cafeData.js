@@ -1,4 +1,4 @@
-const cafe = [
+const cafeData = [
   {
     "shopName": "The Coffee Connection",
     "address": "123 Lakeside Way",
@@ -25,4 +25,4 @@ const cafe = [
   }
 ]
 
-module.exports = cafe;
+module.exports = cafeData;
