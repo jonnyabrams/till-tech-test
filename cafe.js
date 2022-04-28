@@ -17,7 +17,14 @@ class Cafe {
   }
 
   orderItems(item, quantity) {
+    this.#errorCheck(item, quantity);
+
     this.order.items.push({ item: item, price: this.prices[item], quantity: quantity });
+  };
+
+  #errorCheck(item, quantity) {
+    if(!this.prices.hasOwnProperty(item)) throw new Error('Item unavailable');
+    if(typeof quantity !== 'number') throw new Error('Quantity is not a number');
   };
 };
 
