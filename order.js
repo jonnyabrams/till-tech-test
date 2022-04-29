@@ -1,6 +1,6 @@
 class Order {
-  constructor() {
-    this.items = []
+  constructor(items = []) {
+    this.items = items
   };
 
   printBill() {
@@ -16,7 +16,7 @@ class Order {
 
   #formatBill() {
     return this.items.map((orderItem) => {
-      return `${orderItem.item}: ${orderItem.quantity} x ${orderItem.price}`
+      return `${orderItem.item}: ${orderItem.quantity} x £${orderItem.price.toFixed(2)}`
     });
   };
 };
