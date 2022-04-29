@@ -56,6 +56,18 @@ describe('Cafe', () => {
       cafe.orderItems('coffee', 2)
       cafe.orderItems('chips', 1)
       expect(cafe.order.items.length).toEqual(2);
+      expect(cafe.order.items).toEqual( [
+        { item: 'coffee', price: 2.50, quantity: 2 },
+        { item: 'chips', price: 4.50, quantity: 1 }
+      ]);
+    });
+
+    it('will not let you order an item not on the menu', () => {
+      expect(() => { cafe.orderItems('pizza', 3) }).toThrowError('Item unavailable');
+    });
+
+    it('will not let you order a quantity that is not a number', () => {
+      expect(() => { cafe.orderItems('chips', '3') }).toThrowError('Quantity is not a number');
     });
   });
 });
