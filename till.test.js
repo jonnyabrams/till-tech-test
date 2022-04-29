@@ -16,14 +16,11 @@ describe('Till', () => {
     expect(till).toBeInstanceOf(Till);
   });
   
-  describe('getCafeData', () => {
-    it('initializes with a cafe', () => {
-      expect(till.cafe).toEqual(cafe);
-      expect(till.cafe.name).toEqual('Caffiends');
-      expect(till.cafe.address).toEqual('10 Bean Street');
-      expect(till.cafe.phone).toEqual('123123');
-      expect(till.cafe.prices).toHaveProperty('tea');
-    });
-
+  it('initializes with a cafe', () => {
+    expect(till.cafe).toEqual(cafe);
+    expect(till.cafe.name).toEqual('Caffiends');
+    expect(till.cafe.address).toEqual('10 Bean Street');
+    expect(till.cafe.phone).toEqual('123123');
+    expect(till.cafe.prices).toHaveProperty('tea');
   });
 });
