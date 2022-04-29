@@ -14,8 +14,10 @@ describe('Cafe', () => {
     ]
   };
 
+  const order = { items: [] };
+
   beforeEach(() => {
-    cafe = new Cafe(data);
+    cafe = new Cafe(data, order);
   });
 
   it('is an instance of the Cafe class', () => {
@@ -49,11 +51,11 @@ describe('Cafe', () => {
     });
   });
 
-  // describe('orderItems', () => {
-  //   it('add items to the order', () => {
-  //     cafe.orderItems('coffee', 2)
-  //     cafe.orderItems('chips', 1)
-  //     expect(cafe.order.items.length).toEqual(2);
-  //   });
-  // });
+  describe('orderItems', () => {
+    it('add items to the order', () => {
+      cafe.orderItems('coffee', 2)
+      cafe.orderItems('chips', 1)
+      expect(cafe.order.items.length).toEqual(2);
+    });
+  });
 });
